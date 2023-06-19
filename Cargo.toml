@@ -1,0 +1,31 @@
+[package]
+name = "mdbook-bash-tutorial"
+version = "0.1.1"
+edition = "2021"
+authors = ["Francesco Ilario <fr.ilario@gmail.com>"]
+description = "A mdbook preprocessor that allows embedding Bash scripts as tutorials"
+license-file = "LICENSE"
+repository = "https://github.com/filariow/mdbook-bash-tutorial"
+keywords = ["mdbook", "markdown", "preprocessor", "bash", "tutorial"]
+exclude = ["./github/**", "data"]
+
+[[bin]]
+name = "mdbook-bash-tutorial"
+path = "src/bin/main.rs"
+
+[lib]
+name = "mdbash_tutorial"
+path = "src/lib.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.71"
+clap = "4.3.4"
+env_logger = "0.10.0"
+lazy_static = "1.4.0"
+log = "0.4.19"
+mdbook = "0.4.30"
+regex = "1.8.4"
+semver = "1.0.17"
+serde_json = "1.0.97"
