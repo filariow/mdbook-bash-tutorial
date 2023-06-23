@@ -145,7 +145,7 @@ mod test {
                     {
                         "Chapter": {
                             "name": "Chapter 1",
-                            "content": "1. Test\n\t```bash\n\techo \"test\"\n\t```\n",
+                            "content": "1. Test\n\n\t```bash\n\techo \"test\"\n\t```\n",
                             "number": [1],
                             "sub_items": [],
                             "path": "chapter_1.md",
