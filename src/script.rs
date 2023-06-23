@@ -40,10 +40,10 @@ impl fmt::Display for Step {
                  .trim_start()
                  .to_string())
             .collect::<Vec<String>>()
-            .join("");
+            .join("\t");
         let code = self.code.join("\t");
 
-        write!(f, "1. {}\t```{}\n\t{}\t```\n", comments, self.format, code)
+        write!(f, "1. {}\n\t```{}\n\t{}\t```\n", comments, self.format, code)
     }
 }
 
@@ -116,27 +116,20 @@ fn read_step(script: &mut BufReader<File>) -> Result<Option<Step>, std::io::Erro
             return Ok(Some(s));
         }
 
-        if l
+        let t = l
             .trim_end_matches('\r')
-            .trim_end_matches('\n')
-            .is_empty() {
+            .trim_end_matches('\n');
+        if t.is_empty() || t.ends_with("# mdbash: skip-line") {
             continue
         }
 
         let is_comment = l.starts_with("#");
-        if !comments.is_empty() && is_comment {
+        if is_comment && !code.is_empty() {
             match script.seek_relative(-1 * l.len() as i64) {
                 Ok(x) => x,
                 Err(_) => panic!("error resetting file reader"),
             }
             break
-        }
-
-        if l
-            .trim_end_matches('\r')
-            .trim_end_matches('\n')
-            .ends_with("# mdbash: skip-line") {
-            continue
         }
 
         if is_comment {

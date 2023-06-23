@@ -33,7 +33,7 @@ impl Preprocessor for BashTutorial {
             if let BookItem::Chapter(ref mut chapter) = section {
                 if let Some(ref _source) = chapter.path {
                     let content = BashTutorial::add_tutorial(&src_dir, chapter)
-                            .expect("error substituting adding tutorial");
+                            .expect("error adding tutorial in chapter {chapter}");
                     chapter.content = content;
                 }
             }
