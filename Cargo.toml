@@ -1,10 +1,10 @@
 [package]
 name = "mdbook-bash-tutorial"
-version = "0.1.3"
+version = "0.1.4"
 edition = "2021"
 authors = ["Francesco Ilario <fr.ilario@gmail.com>"]
 description = "A mdbook preprocessor that allows embedding Bash scripts as tutorials"
-license-file = "LICENSE"
+license = "MIT OR Apache-2.0"
 repository = "https://github.com/filariow/mdbook-bash-tutorial"
 keywords = ["mdbook", "markdown", "preprocessor", "bash", "tutorial"]
 exclude = ["./github/**", "data"]
