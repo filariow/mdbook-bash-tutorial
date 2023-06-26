@@ -1,6 +1,6 @@
 # mdbook bash tutorial
 
-:warning: this preprocessor is not production ready, use it with caution :warning:
+⚠️ this preprocessor is not production ready, use it with caution ⚠️
 
 The Bash Tutorial mdbook preprocessor allows you to import a Bash script in your book.
 Scripts remain easily testable and are embedded in the book at build time.
